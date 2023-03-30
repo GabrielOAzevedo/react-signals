@@ -19,7 +19,5 @@ export function useSignal<T extends object>(initialValue: T) {
     },
   };
 
-  const proxy = new Proxy(intrinsicValue, watcher);
-
-  return proxy;
+  return new Proxy(intrinsicValue, watcher);
 }
